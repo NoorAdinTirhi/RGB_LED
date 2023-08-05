@@ -29,9 +29,6 @@ module test_module (
 		clk_timer = clk_timer + 1;
 	end
 
-	always @(posedge rst) begin
-		
-	end
 
 	//for comparison in waveform generation
 	always @(posedge slow_clk[9]) begin
