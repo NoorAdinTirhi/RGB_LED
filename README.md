@@ -1,6 +1,5 @@
 # RGB_LED PWM Generator
-    RGB LED controlled through three PWM Signals using FPGA
-
+RGB LED controlled through three PWM Signals using FPGA
 ## Digital Circuit
 ### Pinout
 FPGA Board used in TANG PRIMER 20K.
@@ -68,7 +67,7 @@ always @(posedge slow_clk[9]) begin
 		if (!R_down)
 			if (R_timer != 0)
 				R_timer = R_timer - 1;
-                
+
 		if (G_up)
 			if (G_timer != 'hffff)
 				G_timer = G_timer + 1;
