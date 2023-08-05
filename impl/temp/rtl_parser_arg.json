@@ -1,0 +1,16 @@
+{
+ "Files" : [
+  {
+   "Path" : "/home/nooradintirhi/Documents/FPGA/RGB_LED/src/top.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "/home/nooradintirhi/Documents/FPGA/RGB_LED/impl/temp/rtl_parser.result",
+ "Top" : "",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

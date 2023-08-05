@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "/home/nooradintirhi/Documents/FPGA/RGB_LED/src/top.v",
+  "InstLine" : 1,
+  "InstName" : "test_module",
+  "ModuleFile" : "/home/nooradintirhi/Documents/FPGA/RGB_LED/src/top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "test_module"
+ }
+]
