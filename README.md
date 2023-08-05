@@ -7,7 +7,7 @@
     
     Waveform generator module has the following pinout:
 
-    ```
+    ```verilog
     input wire clk,
 	input wire rst,
 
@@ -37,7 +37,7 @@
     the pwm singals are driven on the X_out.
 ### Timers
 
-    ```
+    ```verilog
     reg [15:0] R_timer = 0;
 	reg [15:0] G_timer = 0;
 	reg [15:0] B_timer = 0;
@@ -46,7 +46,7 @@
 
     the X_timer registers are used for comparisons to decide current X_out pins level.
 ### Prescaler
-    ```
+    ```verilog
         //clk prescaler by 1024
 	    reg [9:0]	slow_clk = 0;
 	    always @(posedge clk)begin
@@ -56,7 +56,7 @@
     ```
     prescale the 27Mhz clk for user control.
 ### Set Timer Values
-    ```
+    ```verilog
     always @(posedge slow_clk[9]) begin
 		if (!rst) begin
 			R_timer = 0;
@@ -90,7 +90,7 @@
     ```
     increment, decrement, or reset timer registers on user input 
 ### Waveform Generation
-    ```
+    ```verilog
     //waveform comparison and generation
 	always @(posedge clk) begin
 		if (clk_timer < R_timer)
