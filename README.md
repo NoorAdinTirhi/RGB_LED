@@ -22,35 +22,33 @@ the cst file contains the configuration for the pins on the FPGA, auto-generated
 ### Pinout
 FPGA Board used in TANG PRIMER 20K.
     
-Waveform generator module has the following pinout:
+## Diagram
+![Diagram](test_module.svg "Diagram")
+## Ports
 
-```verilog
-input wire clk,
-input wire rst,
+| Port name | Direction | Type | Description |
+| --------- | --------- | ---- | ----------- |
+| clk       | input     | wire |     sync        |
+| rst       | input     | wire |     sync reset      |
+| R_up      | input     | wire | inc red duty     |
+| G_up      | input     | wire |        inc green duty    |
+| B_up      | input     | wire |      inc blue duty       |
+| R_down    | input     | wire |   dec red duty           |
+| G_down    | input     | wire |   dec green duty         |
+| B_down    | input     | wire |   dec blue duty         |
+| R_out     | output    | reg  |   red PWM Signal pin          |
+| G_out     | output    | reg  |   green PWM Signal pin         |
+| B_out     | output    | reg  |   blue PWM Signal Pin          |
 
-input wire R_up,
-input wire G_up,
-input wire B_up,
-input wire R_down,
-input wire G_down,
-input wire B_down,
+## Signals
 
-output reg R_out,
-output reg G_out,
-output reg B_out
-```
-
-clk used to synchronize circuit, used internal H11 pin of TANG PRIMER 20K
-    
-rst is logic low, used to reset all timers.
-
-input pins X_up used to increase duty cycle.
-X_up are logic high.
-
-input pins X_down used to decrease duty cycle.
-X_down are logic low.
-
-the pwm singals are driven on the X_out.
+| Name          | Type       | Description |
+| ------------- | ---------- | ----------- |
+| R_timer = 0   | reg [15:0] | red's current duty            |
+| G_timer = 0   | reg [15:0] | green's current duty            |
+| B_timer = 0   | reg [15:0] | blue's current duty            |
+| clk_timer = 0 | reg [15:0] | used for comparison            |
+| slow_clk = 0  | reg [9:0]  | used for superscaling            |
 ### Timers
 
 ```verilog
